@@ -35,6 +35,28 @@ var pose_index = 0;
 var percentage = 0;
 var speak_count = 0;
 
+window.addEventListener("DOMContentLoaded", () => {
+  circle = new CircularProgressBar("pie");
+  pie = document.querySelectorAll(".pie");
+});
+
+function speak() {
+  if (speak_count == 0) {
+    window.speechSynthesis.speak(msg);
+    speak_count++;
+  }
+}
+
+function percentage_meter(value) {
+  pie.forEach((el, index) => {
+    const options = {
+      index: index + 1,
+      percent: value,
+    };
+    circle.animationTo(options);
+  });
+}
+
 // Play
 function play() {
   player.play();
