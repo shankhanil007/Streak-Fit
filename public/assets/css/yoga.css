@@ -1,0 +1,49 @@
+.percentage-meter-container {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.percentage-text {
+  font-weight: 700;
+  color: #333;
+}
+.percentage-number {
+  font-size: 4rem;
+  vertical-align: middle;
+}
+.percent-sign {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+.percentage-meter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 200px;
+}
+.percentage-meter .path {
+  /* set with JS */
+  /*transition: stroke-dashoffset 1s;*/
+  stroke: url(#circleGradient);
+  stroke-width: 20px;
+  stroke-linecap: round; /* butt and square have issues in chrome when 25%, not sure why */
+  fill: transparent;
+  /* only available for SVG2 */
+  /*cx:100;
+	cy:100;
+	r:90;*/
+}
+.percentage-meter .track {
+  stroke: #f3f3f3;
+  stroke-width: 20px;
+  fill: transparent;
+  /* only available for SVG2 */
+  /*cx:100;
+	cy:100;
+	r:90;*/
+}
