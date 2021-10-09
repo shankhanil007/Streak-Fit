@@ -1,0 +1,33 @@
+<%- include('partials/header1'); -%>
+<link href="/assets/css/dashboard.css" rel="stylesheet" />
+<%- include('partials/header2'); -%> <%- include('partials/navbar'); -%>
+
+<div class="row mb-2">
+    <div class="col-md-12 page-header">
+      <div class="page-pretitle">Overview</div>
+      <h2 class="page-title">Dashboard</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card" style="padding-left: 0px; padding-right: 0;">
+      <div class="card-header">
+        <div class="row"> 
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <p class="card-text" style="margin-bottom: 5px; margin-top: 3px;">Name: <b><%=name%></b> </p>
+            <p class="card-text" style="margin-bottom: 5px;">Streak: <b><%=streak%> days</b></p>
+            <p class="card-text" style="margin-bottom: 5px;">Points: <b><%=points%></b> </p>
+            <p class="card-text" style="margin-bottom: 5px;">Overall Ranking: <b><%=ranking%></b> </p>
+          </div>
+          <div class="col-sm-6 col-md-2 col-lg-2"><img src="/assets/img/10.png"></div>
+          <div class="col-sm-6 col-md-2 col-lg-2"><img src="/assets/img/11.png"></div>
+          <div class="col-sm-6 col-md-2 col-lg-2"><img src="/assets/img/12.png"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer1'); -%>
+    <script src="/assets/js/dashboard.js"></script>
+    <%- include('partials/footer2'); -%>
+  </div>
+</div>
