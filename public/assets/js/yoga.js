@@ -10,6 +10,23 @@ function onResults(results) {
   }
 
   landmarks = results;
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:8000/landmarks",
+    data: {
+      results: JSON.stringify(landmarks.poseLandmarks),
+      expected_pose: pose_data[pose_index].pose,
+    },
+    contentType: "application/json",
+    dataType: "json",
+    success: function (data) {
+      data = JSON.parse(data);
+      console.log(data);
+      if (parseInt(data.accuracy) > percentage) {
+        percentage = parseInt(data.accuracy);
+      }
+    },
+  });
 
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
