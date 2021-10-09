@@ -35,6 +35,19 @@ var pose_index = 0;
 var percentage = 0;
 var speak_count = 0;
 
+document.getElementById("pose").addEventListener("change", () => {
+  pose_index = parseInt(document.getElementById("pose").value);
+  addVideoURL(pose_data[pose_index].video_url);
+  var video = document.getElementById("video");
+  video.currentTime = 0;
+  percentage = 0;
+  percentage_meter(0);
+  if (pose_index == 1) {
+    document.getElementById("mountain").style.display = "none";
+    document.getElementById("triangle").style.display = "block";
+  }
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   circle = new CircularProgressBar("pie");
   pie = document.querySelectorAll(".pie");
@@ -122,6 +135,7 @@ function addVideoURL(url) {
     ],
   };
 }
+
 // ----------------------------------------------------------------------------------
 const videoElement = document.getElementsByClassName("input_video")[0];
 const canvasElement = document.getElementsByClassName("output_canvas")[0];
@@ -134,23 +148,6 @@ function onResults(results) {
   }
 
   landmarks = results;
-  $.ajax({
-    type: "GET",
-    url: "http://localhost:8000/landmarks",
-    data: {
-      results: JSON.stringify(landmarks.poseLandmarks),
-      expected_pose: pose_data[pose_index].pose,
-    },
-    contentType: "application/json",
-    dataType: "json",
-    success: function (data) {
-      data = JSON.parse(data);
-      console.log(data);
-      if (parseInt(data.accuracy) > percentage) {
-        percentage = parseInt(data.accuracy);
-      }
-    },
-  });
 
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
