@@ -35,6 +35,50 @@ function isLoggedIn(req, res, next) {
   res.redirect("/login");
 }
 
+//------------------------   Authentication Routes  -------------------------
+
+app.get("/login", function (req, res) {
+  res.render("login");
+});
+app.get("/signup", function (req, res) {
+  res.render("signup");
+});
+
+app.post("/signup", function (req, res) {
+  User.register(
+    new User({
+      username: req.body.username,
+      name: req.body.name,
+      phone: req.body.phone,
+    }),
+    req.body.password,
+    function (err, user) {
+      if (err) {
+        console.log(err);
+      }
+      passport.authenticate("local")(req, res, function () {
+        res.redirect("/" + req.user._id + "/streak");
+      });
+    }
+  );
+});
+
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    failureRedirect: "/login",
+  }),
+  function (req, res) {
+    res.redirect("/" + req.user._id + "/streak");
+  }
+);
+app.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
+// ------------------------ Authentication Ends ------------------------------
+
 // Landing page
 app.get("/", function (req, res) {
   res.render("index.ejs");
