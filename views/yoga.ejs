@@ -1,0 +1,65 @@
+<%- include('partials/header1'); -%>
+<script
+  src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/control_utils_3d.js"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"
+  crossorigin="anonymous"
+></script>
+<link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css" />
+<style></style>
+<%- include('partials/header2'); -%> <%- include('partials/navbar'); -%>
+
+<div class="row">
+  <p id="notification" hidden></p>
+  <div class="entry-modal" id="entry-modal">
+    <div class="mt-3">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="Yoga Poses" class="form-label">Yoga Poses</label>
+          <select id="pose" name="time" class="form-select" required>
+            <option value="0">Mountain</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary mt-2 mb-5" onclick="play()">Start</button>
+    </div>
+  </div>
+</div>
+
+<div class="meet-area">
+  <div class="row">
+    <div class="col-md-5">
+      <!-- Local Video Element-->
+      <video class="input_video" style="display: none"></video>
+      <canvas class="output_canvas" width="500px" height="450px"></canvas>
+    </div>
+  </div>
+</div>
+
+<%-include('partials/footer1'); -%>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"
+></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/plyr@3"></script>
+<script src="/assets/js/circularProgressBar.min.js"></script>
+<script src="/assets/js/yoga.js"></script>
+<%- include('partials/footer2'); -%>
