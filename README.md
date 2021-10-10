@@ -27,20 +27,18 @@
 
 ## Novelty
 
-- Firstly, we plan to integrate a pose detection algorithm on a live video stream, so that the
-algorithm will keep a count of the exercises performed, while the user is in a video call with his
-peers. Such functionality does not exist in present day fitness apps. 
-- Secondly, we will train an ML model to classify various yoga poses and also predict their
-accuracies. The work done in this field is very limited and we hope to extend it.
-- Thirdly, we plan to gamify our application and make it as interactive as possible. This will help
-to build the motivation among our users to continue exercising even in virtual mode.
+- Unlike google meet or MS Teams we have integrated a pose detection algorithm on a live video stream so that the algorithm will keep a count of the exercises performed, while the user is in a video call with his peers. Such functionality does not exist in present-day fitness apps. 
+- We have trained an ML model to classify various yoga poses and also predict their accuracies. It also gives real-time personalized feedback to the user to perform exercises correctly.
+- We have tried to gamify our application and make it as interactive as possible. This will help to build the motivation among our users to continue exercising even in virtual mode.
 
 ## Potential Impact of our solution
 
-Our solution has the potential to impact millions of fitness freaks who miss the gym
+- Our solution has the potential to impact millions of fitness freaks who miss the gym
 environment during the Covid-19 lockdown and find it difficult to exercise alone. With physical
 training facilities shut down all across the globe, our solution will provide an effective mode to
 revive the motivation to exercise and build a healthy fitness community globally.
+- Fitness instructors can use our application for online exercise sessions. They will benefit from our AI-Powered Pose detection model to see if their students are exercising correctly.
+- In the future, we plan to shift our application to a mobile version. This way our users can conveniently carry our app and still exercise with their peers across the globe.
 
 ## Tech Stack
 
