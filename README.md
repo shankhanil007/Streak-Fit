@@ -1,4 +1,14 @@
-# Streak-fit
+# Streak-Fit
+
+## Problem Statement
+- Due to the COVID-19 pandemic gyms, parks, and fitness facilities worldwide have been shut down. It has become difficult for health-conscious people to interact and exercise with their peers. Moreover, students are limited to playing online games. 
+- The physical fitness and health among the work-from-home folks during the pandemic has degraded. People have lost of the motivation to exercise in virtual mode.
+- Also, online exercise sessions are not productive. It is not possible for the instructor to determine whether the students are exercising correctly through a video call.
+
+## Our Solution
+- We present a virtual gym community where people can join a private video chat room and exercise with their mates. It would keep a track of one’s daily fitness activities and also host exercise competitions among peers.
+- We plan to leverage the power of AI/ML to track various exercises movements and yoga postures to determine if the users are exercising correctly. 
+- Our pose detection algorithm shall take care of the counts and exercise postures so that users can freely exercise with their peers. 
 
 ## Workflow
 ![](public/assets/img/features/Workflow.png)
