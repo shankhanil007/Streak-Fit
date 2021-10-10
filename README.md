@@ -12,3 +12,18 @@
 - **AI Powered:** Our pose detection algorithm will assist you to perform each asana accurately.
 - **Video Stream:** Join with your friends on a video call for a healthy fitness competition.
 - **Win Rewards:** Be a top performer and win discount points and get a chance to win free elite pass.
+
+
+## Tech Stack
+
+The Tech stack includes : 
+- Machine Learning
+- Javascirpt
+- Node.js
+- MongoDB
+- socket.io
+- peer.js
+- Web RTC
+- mediapipe pose
+- Bootstrap
+- OpenCV
