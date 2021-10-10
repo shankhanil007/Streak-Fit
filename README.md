@@ -1,5 +1,7 @@
 # Streak-Fit
-
+ * Try it out : https://streak-fit.herokuapp.com/
+ * Video Demo : https://youtu.be/Dph8nHgxlCo
+ 
 ## Problem Statement
 - Due to the COVID-19 pandemic gyms, parks, and fitness facilities worldwide have been shut down. It has become difficult for health-conscious people to interact and exercise with their peers. Moreover, students are limited to playing online games. 
 - The physical fitness and health among the work-from-home folks during the pandemic has degraded. People have lost of the motivation to exercise in virtual mode.
