@@ -80,8 +80,53 @@ app.get("/logout", function (req, res) {
 // ------------------------ Authentication Ends ------------------------------
 
 // Landing page
-app.get("/", function (req, res) {
-  res.render("index.ejs");
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
+app.get("/:id/streak", isLoggedIn, (req, res) => {
+  User.findById(req.params.id, function (err, details) {
+    if (err) console.log(err);
+    else {
+      res.render("streak", {
+        name: details.name,
+        streak: details.streak,
+        points: details.points,
+        ranking: details.ranking,
+      });
+    }
+  });
+});
+
+app.get("/:id/compete", isLoggedIn, function (req, res) {
+  User.findById(req.params.id, function (err, details) {
+    if (err) console.log(err);
+    else {
+      res.render("compete", {
+        call: call,
+      });
+    }
+  });
+});
+
+app.get("/:id/yoga", isLoggedIn, function (req, res) {
+  User.findById(req.params.id, function (err, details) {
+    if (err) console.log(err);
+    else {
+      res.render("yoga", {
+        call: call,
+      });
+    }
+  });
+});
+
+app.get("/:id/leaderboard", function (req, res) {
+  leaderBoard.find({ room: req.params.id }, function (err, details) {
+    if (err) console.log(err);
+    else {
+      res.json(details);
+    }
+  });
 });
 
 app.listen(process.env.PORT || 3000, () => console.log(`Server has started.`));
