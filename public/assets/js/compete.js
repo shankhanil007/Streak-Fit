@@ -108,6 +108,46 @@ function timer() {
   }, 1000);
 }
 
+function leaderBoard() {
+  var winner = "";
+  var max = -1;
+
+  fetch(`http://localhost:3000/${room}/leaderboard`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      var table = document.getElementById("leaderboard");
+      $("#leaderboard").find("tr:not(:first)").remove();
+      for (var i = 0; i < json.length; i++) {
+        if (json[i].score > max) {
+          max = json[i].score;
+          winner = json[i].name;
+        }
+
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td3 = document.createElement("td");
+
+        var text1 = document.createTextNode(json[i].name);
+        var text3 = document.createTextNode(json[i].score);
+        td1.appendChild(text1);
+        td3.appendChild(text3);
+        tr.appendChild(td1);
+        tr.appendChild(td3);
+        table.appendChild(tr);
+      }
+
+      if (finished == true) {
+        document.getElementById("winner").innerHTML = "Winner : " + winner;
+      }
+    });
+}
+
 //---------------------------------------------------------------------------------------
 
 const canvasElement = document.getElementsByClassName("output_canvas")[0];
