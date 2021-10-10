@@ -38,6 +38,76 @@ var exerciseTime = 0;
 var breakTime = 0;
 var games = [];
 
+function thirty() {
+  var countDownTarget = new Date().getTime() + breakTime * 60 * 1000;
+  console.log(breakTime * 60);
+  function showClock(target) {
+    const distance = target - new Date().getTime();
+    const mins =
+      distance < 0
+        ? 0
+        : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = distance < 0 ? 0 : Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the results
+    document.getElementById("timer").innerHTML = "0" + mins + ": " + secs;
+  }
+
+  showClock(countDownTarget);
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    showClock(countDownTarget);
+    if (countDownTarget - new Date().getTime() < 0) {
+      exercise = "";
+      document.getElementById("timer").innerHTML = "00:00";
+      fetchResult();
+      clearInterval(x);
+      if (gamecount == games.length) {
+        complete();
+      } else {
+        timer();
+        callGame(gamecount);
+        gamecount += 1;
+      }
+    }
+  }, 1000);
+}
+
+function timer() {
+  var countDownTarget = new Date().getTime() + exerciseTime * 60 * 1000;
+
+  function showClock(target) {
+    const distance = target - new Date().getTime();
+    const mins =
+      distance < 0
+        ? 0
+        : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = distance < 0 ? 0 : Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the results
+    document.getElementById("timer").innerHTML = "0" + mins + ": " + secs;
+  }
+
+  showClock(countDownTarget);
+
+  var x = setInterval(function () {
+    showClock(countDownTarget);
+    if (countDownTarget - new Date().getTime() < 0) {
+      exercise = "";
+      document.getElementById("timer").innerHTML = "00:00";
+      fetchResult();
+      clearInterval(x);
+      if (gamecount != games.length) {
+        thirty();
+        rest();
+      } else {
+        complete();
+      }
+    }
+  }, 1000);
+}
+
 //---------------------------------------------------------------------------------------
 
 const canvasElement = document.getElementsByClassName("output_canvas")[0];
