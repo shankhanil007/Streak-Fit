@@ -1,6 +1,4 @@
 # Streak-Fit
- * Try it out : https://streak-fit.herokuapp.com/
- * Video Demo : https://youtu.be/Dph8nHgxlCo
  
 ## Problem Statement
 - Due to the COVID-19 pandemic gyms, parks, and fitness facilities worldwide have been shut down. It has become difficult for health-conscious people to interact and exercise with their peers. Moreover, students are limited to playing online games. 
@@ -40,16 +38,16 @@ revive the motivation to exercise and build a healthy fitness community globally
 - Fitness instructors can use our application for online exercise sessions. They will benefit from our AI-Powered Pose detection model to see if their students are exercising correctly.
 - In the future, we plan to shift our application to a mobile version. This way our users can conveniently carry our app and still exercise with their peers across the globe.
 
-## Tech Stack
+## Challenges we faced
 
-The Tech stack includes : 
-- Machine Learning
-- Javascirpt
-- Node.js
-- MongoDB
-- socket.io
-- peer.js
-- Web RTC
-- mediapipe pose
-- Bootstrap
-- OpenCV
+- Integrating a pose detection model for accurate real-time results was challenging. After a lot of research work, we were able to successfully implemented the Mediapipe Pose model to serve our purpose.
+- We could not use Google meet or MS Teams for the video calling feature in our application because we do not have access to their video element to apply the pose detection model. Hence we had to build our own video sharing application from scratch.
+- It took us a lot of brainstorming to code the logic of training the ML model to classify yoga poses and predict their accuracies.
+
+
+## What's next for Streak-Fit
+
+- Improving ML model for more accurate results
+- Addition of more exercises and yoga asanas
+- Switching to a better hosting service like Azure or AWS for increased website traffic handling
+- Feature to add user's custom exercises/ routine
