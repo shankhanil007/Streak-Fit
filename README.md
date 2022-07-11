@@ -11,7 +11,7 @@
 - Our pose detection algorithm shall take care of the counts and exercise postures so that users can freely exercise with their peers. 
 
 ## Workflow
-![](public/assets/img/features/Workflow.png)
+<img src="public/assets/img/features/Workflow.png" width="600">
 
 
 ## Features
